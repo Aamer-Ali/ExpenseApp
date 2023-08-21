@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./NewExpense.css";
 import ExpenseForm from "./ExpenseForm";
 
@@ -8,9 +8,28 @@ const NewExpense = ({ onSaveExpenseData }) => {
     onSaveExpenseData(expenseData);
   };
 
+  const [isEditing, setIsEdititng] = useState(false);
+
+  const stratEditingHandler = () => {
+    setIsEdititng(true);
+  };
+
+  const stopEditingHandler = () => {
+    setIsEdititng(false);
+  };
+
   return (
     <div className="new-expense">
-      <ExpenseForm onSaveExpenseData={saveExpenseData} />
+      {!isEditing && (
+        <button onClick={stratEditingHandler}> Add New Expense </button>
+      )}
+
+      {isEditing && (
+        <ExpenseForm
+          onSaveExpenseData={saveExpenseData}
+          onCancel={stopEditingHandler}
+        />
+      )}
     </div>
   );
 };
