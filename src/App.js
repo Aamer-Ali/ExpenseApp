@@ -26,13 +26,6 @@ const App = () => {
     },
   ];
 
-  // return React.createElement(
-  //   'div',
-  //   {},
-  //   React.createElement('h2', {}, "Let's get started!"),
-  //   React.createElement(Expenses, { items: expenses })
-  // );
-
   const [expenses, setExpenses] = useState(DUMMY_DATA);
 
   const saveExpenseData = (userExpenses) => {

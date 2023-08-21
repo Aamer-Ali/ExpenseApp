@@ -6,58 +6,17 @@ const ExpenseForm = ({ onSaveExpenseData }) => {
   const [amount, setAmount] = useState("");
   const [date, setDate] = useState("");
 
-  //   const [userInput, setUserInput] = useState({
-  //     title: "",
-  //     amount: "",
-  //     date: "",
-  //   });
-
   const titleChangeHandler = (event) => {
     setTitle(event.target.value);
-
-    // setUserInput({
-    //   ...userInput,
-    //   title: event.target.vallue,
-    // });
-
-    // setUserInput((prevState) => {
-    //   return { ...prevState, title: event.target.vallue };
-    // });
   };
 
   const amountChangeHandler = (event) => {
     setAmount(event.target.value);
-
-    // setUserInput({
-    //   ...userInput,
-    //   amount: event.target.vallue,
-    // });
-
-    // setUserInput((prevState) => {
-    //   return { ...prevState, title: event.target.vallue };
-    // });
   };
 
   const dateChangeHandler = (event) => {
     setDate(event.target.value);
-
-    // setUserInput({
-    //   ...userInput,
-    //   date: event.target.vallue,
-    // });
-
-    // setUserInput((prevState) => {
-    //   return { ...prevState, title: event.target.vallue };
-    // });
   };
-
-  //---------- Shared Event Handler -----------------------
-  //   const inputChangeHandler = (identifier, value) => {
-  //     if (identifier === "title") {
-  //       setTitle(value);
-  //     }
-  //     // ...
-  //   };
 
   const onSubmitHandler = (event) => {
     event.preventDefault();
@@ -83,7 +42,6 @@ const ExpenseForm = ({ onSaveExpenseData }) => {
             name="title"
             value={title}
             onChange={titleChangeHandler}
-            // onChange={(event) => {inputChangeHandler("title", event.target.value);}}
           />
         </div>
 
